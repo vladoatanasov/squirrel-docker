@@ -15,6 +15,7 @@ squirrel-master:
   privileged: true
   ports:
     - 9999:9999
+    - 1234:1234
 
 squirrel-worker:
   build: squirrel-worker/

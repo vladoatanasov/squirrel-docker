@@ -1,9 +1,9 @@
 #!/bin/bash
 
-apt-get update
-apt-get install -y babeld
-apt-get install -y net-tools
-apt-get install -y iputils-ping
+printf "Waiting for etcd to start\n"
+while [ $httpstatus -ne "200" ]; do
+  httpstatus=$(curl -s -o /dev/null -I -w "%{http_code}" http://etcd:2379/v2/keys/squirrel/master_ifce)
+done
 
 # babeld -d 3 eth0
 
