@@ -2,7 +2,7 @@ FROM ubuntu
 
 MAINTAINER Vladimir Atanasov
 
-RUN apt-get update && apt-get install -y curl babeld net-tools iputils-ping
+RUN apt-get update && apt-get install -y curl babeld net-tools iputils-ping iproute
 
 COPY squirrel-master /tmp/squirrel-master
 RUN chmod +x /tmp/squirrel-master
